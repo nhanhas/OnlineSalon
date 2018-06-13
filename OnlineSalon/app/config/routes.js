@@ -6,12 +6,20 @@ import { StackNavigator } from 'react-navigation';
  * available to this APP
  */
 
+import Language from '../screens/Language';
 import Login from '../screens/Login';
 import Options from '../screens/Options';
 
 //Login Stack
 const LoginStack = StackNavigator(
   {
+    Language: {
+      screen: Language,
+      navigationOptions: {
+        header: () => null,
+        headerTitle: 'Language',
+      },
+    },
     Login: {
         screen: Login,
         navigationOptions: {
@@ -37,7 +45,7 @@ const LoginStack = StackNavigator(
  */
 export default StackNavigator(
   {
-    Login: {
+    Language: {
       screen: LoginStack,
     }
   },

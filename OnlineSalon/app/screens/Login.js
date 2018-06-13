@@ -1,21 +1,35 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   Button,
   View
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-
+/**
+ * Stage #3 of Authentication
+ * Username & Password
+ *       Or
+ * Create Account
+ */
 export default class Login extends Component {
+  /**
+   * Declare All Component 
+   * Properties
+   */
+  static propTypes = {
+    username : PropTypes.string,
+    password : PropTypes.string
+  }
+  
+  //#A - Login function 
+  userLogin = () => {
+    this.props.navigation.navigate('Options');
+  };
+  
+  //# Render #//
   render() {
     return (
       <View style={styles.container}>
@@ -25,16 +39,9 @@ export default class Login extends Component {
         <Text style={styles.instructions}>
           To get started, edit App.js
         </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-
-        <Button
-        title="Options"
-        onPress={() =>
-          this.props.navigation.navigate('Options')
-        }
-      />
+      
+        <Button title="Options"
+                onPress = {() => {this.userLogin()}} />
 
       </View>
     );
@@ -59,3 +66,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+

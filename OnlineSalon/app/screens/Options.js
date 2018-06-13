@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  View,
   StyleSheet,
   Text
 } from 'react-native';
@@ -9,10 +10,11 @@ import {
 export default class Options extends Component {
   render() {
     return (
+      <View>
         <Text style={styles.welcome}>
          Options to show
         </Text>
-       
+        </View>
     );
   }
 }
