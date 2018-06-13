@@ -1,3 +1,4 @@
+import i18n from '../i18n';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -21,9 +22,9 @@ export default class Language extends Component {
     }
   
     //#A - Choose Language Function
-    selectLanguage = (Language) =>{
+    selectLanguage = (language) =>{
         //#1 - Change App Language
-
+        i18n.locale = language;
         //#2 - Go to Step #3 - Login Screen
         this.props.navigation.navigate('Login');
     };
@@ -33,10 +34,10 @@ export default class Language extends Component {
       return (
         <View style={styles.container}>
           
-            <LanguageButton style={this.props.styles} onPress = {() => {this.selectLanguage('PT')}}
+            <LanguageButton style={this.props.styles} onPress = {() => {this.selectLanguage('pt')}}
                             text="PORTUGUÊS" />
         
-            <LanguageButton onPress = {() => {this.selectLanguage('EN')}}
+            <LanguageButton onPress = {() => {this.selectLanguage('en')}}
                             text="ENGLISH" />
   
 

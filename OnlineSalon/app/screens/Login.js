@@ -1,3 +1,4 @@
+import i18n from '../i18n';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -34,10 +35,10 @@ export default class Login extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          {i18n.t('greeting_one')}
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit App.js
+          {i18n.t('greeting_two')}
         </Text>
       
         <Button title="Options"

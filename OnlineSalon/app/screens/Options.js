@@ -1,3 +1,4 @@
+import i18n from '../i18n';
 import React, { Component } from 'react';
 import {
   View,
@@ -12,7 +13,7 @@ export default class Options extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Options to show
+          {i18n.t('greeting')}
         </Text>
       </View>
     );
