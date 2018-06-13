@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import {
-  StyleSheet,
   Text,
   Button,
   View
@@ -48,7 +48,10 @@ export default class Login extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+/**
+ * Screen Design
+ */
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',

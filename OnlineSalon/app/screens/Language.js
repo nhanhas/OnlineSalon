@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import {
-    StyleSheet,
-    Button,
     View
   } from 'react-native';
+
+import LanguageButton from '../components/Buttons/LanguageButton/LanguageButton';
 
 /**
  * Stage #2 of Authentication
@@ -32,34 +33,31 @@ export default class Language extends Component {
       return (
         <View style={styles.container}>
           
-          <Button title="Português"
-                  onPress = {() => {this.selectLanguage('PT')}} />
+            <LanguageButton style={this.props.styles} onPress = {() => {this.selectLanguage('PT')}}
+                            text="PORTUGUÊS" />
+        
+            <LanguageButton onPress = {() => {this.selectLanguage('EN')}}
+                            text="ENGLISH" />
   
-          <Button title="English"
-                  onPress = {() => {this.selectLanguage('EN')}} />
-  
-  
+
+
         </View>
       );
     }   
-  }
+}   
 
-  const styles = StyleSheet.create({
+/**
+ * Screen Design
+ */
+const styles = EStyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '$lightPink',
     },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
-    },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5,
-    },
-  });
+    buttons:{
+        marginBottom: 10
+    }
+});
   

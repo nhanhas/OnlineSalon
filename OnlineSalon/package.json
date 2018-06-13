@@ -9,7 +9,8 @@
   "dependencies": {
     "react": "16.3.1",
     "react-native": "0.55.4",
-    "react-navigation": "*",
+    "react-navigation": "^1.0.0-beta.21",
+    "react-native-extended-stylesheet": "^0.8.0",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {

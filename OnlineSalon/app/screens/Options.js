@@ -10,15 +10,18 @@ import {
 export default class Options extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.welcome}>
-         Options to show
+          Options to show
         </Text>
-        </View>
+      </View>
     );
   }
 }
 
+/**
+ * Screen Design
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,

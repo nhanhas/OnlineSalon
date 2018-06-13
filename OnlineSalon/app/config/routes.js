@@ -30,6 +30,7 @@ const LoginStack = StackNavigator(
       Options: {
         screen: Options,
         navigationOptions: {
+          header: () => null,
           headerTitle: 'Options',
         },
       }
