@@ -6,7 +6,7 @@ import {
     View
   } from 'react-native';
 
-import LanguageButton from '../components/Buttons/LanguageButton/LanguageButton';
+import {LanguageButton} from '../components/Buttons/LanguageButton';
 
 /**
  * Stage #2 of Authentication
@@ -33,15 +33,13 @@ export default class Language extends Component {
     render() {
       return (
         <View style={styles.container}>
-          
-            <LanguageButton style={this.props.styles} onPress = {() => {this.selectLanguage('pt')}}
-                            text="PORTUGUÊS" />
-        
-            <LanguageButton onPress = {() => {this.selectLanguage('en')}}
-                            text="ENGLISH" />
-  
-
-
+            <View style={styles.buttons}>
+                <LanguageButton style={styles.buttons} onPress = {() => {this.selectLanguage('pt')}}
+                                text="PORTUGUÊS" />
+            
+                <LanguageButton onPress = {() => {this.selectLanguage('en')}}
+                                text="ENGLISH" />
+            </View>
         </View>
       );
     }   
@@ -58,7 +56,8 @@ const styles = EStyleSheet.create({
         backgroundColor: '$lightPink',
     },
     buttons:{
-        marginBottom: 10
+        marginTop: 150,
+        width: '70%'
     }
 });
   

@@ -4,9 +4,8 @@ export default EStyleSheet.create({
     container: {
         alignItems: 'center',
         backgroundColor : 'rgba(255, 255, 255, 0.5)',
-        width : '70%',
-        marginBottom : 10
-
+        width : '100%',
+        marginBottom: 10
       },
       wrapper: {
         flexDirection: 'row',

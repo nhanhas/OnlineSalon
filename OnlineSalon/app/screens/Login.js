@@ -5,8 +5,10 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import {
   Text,
   Button,
-  View
+  View,
 } from 'react-native';
+
+import {CustomInput} from '../components/TextInputs/CustomInput';
 
 
 /**
@@ -16,31 +18,51 @@ import {
  * Create Account
  */
 export default class Login extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+    };
+  }
+
   /**
    * Declare All Component 
    * Properties
    */
   static propTypes = {
-    username : PropTypes.string,
-    password : PropTypes.string
+    //empty
   }
   
   //#A - Login function 
   userLogin = () => {
-    this.props.navigation.navigate('Options');
+    alert(this.state.username);
+    //this.props.navigation.navigate('Options');
   };
   
+  //#B - Handler for CustomInput model change
+  onChangeCustomInput = (model, newValue) => {
+    //#1 - Set new state for username model value
+    this.setState({model: text});
+  };
+
+
   //# Render #//
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          {i18n.t('greeting_one')}
-        </Text>
-        <Text style={styles.instructions}>
-          {i18n.t('greeting_two')}
-        </Text>
-      
+        
+        <View style={styles.formInputs}>
+          <CustomInput  
+            onChange={(newValue) => this.setState({username: newValue})}
+            label = {i18n.t('LOGIN_EMAIL')} />
+
+          <CustomInput  
+            label = {i18n.t('LOGIN_PASSWORD')} />
+
+        </View>
+
+
         <Button title="Options"
                 onPress = {() => {this.userLogin()}} />
 
@@ -57,17 +79,10 @@ const styles = EStyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '$lightPink'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  formInputs: {
+    width: '70%'
   },
 });
 
