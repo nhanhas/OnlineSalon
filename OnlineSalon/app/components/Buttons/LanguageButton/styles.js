@@ -13,7 +13,7 @@ export default EStyleSheet.create({
       },
       
       text: {
-        color: '$darkPink',
+        color: '$xDarkPink',
         fontSize: 16,
         fontWeight: '600',
         paddingVertical: 20

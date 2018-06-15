@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import {CustomInput} from '../components/TextInputs/CustomInput';
+import {CustomButton} from '../components/Buttons/CustomButton';
 
 
 /**
@@ -52,19 +53,30 @@ export default class Login extends Component {
     return (
       <View style={styles.container}>
         
-        <View style={styles.formInputs}>
+        <View style={styles.inputsContainer}>
           <CustomInput  
             onChange={(newValue) => this.setState({username: newValue})}
-            label = {i18n.t('LOGIN_EMAIL')} />
+            label = {i18n.t('APP_LOGIN_EMAIL')} />
 
           <CustomInput  
-            label = {i18n.t('LOGIN_PASSWORD')} />
+            onChange={(newValue) => this.setState({password: newValue})}
+            label = {i18n.t('APP_LOGIN_PASSWORD')} />
+
+          
 
         </View>
 
+        <View style={styles.buttonsContainer}>
+          <CustomButton 
+            label={i18n.t('APP_LOGIN_ENTER_BTN')}
+            onPress = {() => {this.userLogin()}} />
+          
+          <Button 
+              color='#67178c'
+              title={i18n.t('APP_LOGIN_SIGN_BTN')} 
+              onPress={() => {this.userLogin()}} />
+        </View>
 
-        <Button title="Options"
-                onPress = {() => {this.userLogin()}} />
 
       </View>
     );
@@ -81,9 +93,17 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
     backgroundColor: '$lightPink'
   },
-  formInputs: {
+  inputsContainer: {
+    marginTop: 150,
     width: '70%'
   },
+  buttonsContainer: {
+    marginTop: 50,
+    width: '70%'
+  },
+  signButton:{
+    color: '#ffffff'
+  }
 });
 
 

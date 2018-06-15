@@ -15,7 +15,9 @@ EStyleSheet.build({
     $primaryPurple: '#9E768F',
   
     $lightPink: '#fce8f2',
-    $darkPink: '#c482bf',    
+    $normalPink: '#f38dc6',
+    $darkPink: '#c482bf',  
+    $xDarkPink: '#67178c',  
     $white: '#FFFFFF',
     $lightGray: '#F0F0F0',
     $border: '#E2E2E2',

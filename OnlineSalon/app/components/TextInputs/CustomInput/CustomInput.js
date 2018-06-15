@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { View, TextInput } from 'react-native';
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { View } from 'react-native';
+import { FormInput, FormValidationMessage } from 'react-native-elements'
 
 import styles from './styles';
 
