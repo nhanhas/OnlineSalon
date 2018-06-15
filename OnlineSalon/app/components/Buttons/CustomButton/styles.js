@@ -11,6 +11,13 @@ export default EStyleSheet.create({
     },
     customButtonStyle:{
         backgroundColor : '$normalPink'
+    },
+    customIcon:{
+        position: 'absolute',
+        top: 10 ,
+        right: 10
     }
+
+
 
 });

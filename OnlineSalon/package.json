@@ -12,8 +12,8 @@
     "react-navigation": "^1.0.0-beta.21",
     "react-native-extended-stylesheet": "^0.8.0",
     "react-native-i18n": "2.0.12",
-    "react-native-elements": "*",
-    "react-native-vector-icons": "4.5.0",
+    "react-native-elements": "0.19.0",
+    "react-native-vector-icons": "4.4.0",
     "react-native-simple-radio-button": "2.7.1",
     "prop-types": "^15.5.10"
   },
