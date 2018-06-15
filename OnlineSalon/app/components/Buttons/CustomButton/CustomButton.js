@@ -3,7 +3,6 @@ import React from 'react';
 import { View } from 'react-native';
 import { Button } from 'react-native-elements';
 
-//TODO - Fix icon npm lib issue
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './styles';

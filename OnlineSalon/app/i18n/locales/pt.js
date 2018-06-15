@@ -14,6 +14,10 @@ export default {
     APP_AUTHORIZATION_INFO_LABEL: 'A Salão Online \n precisa de aceder \n à sua localização',
     APP_AUTHORIZATION_ALLOW_BTN: 'PERMITIR',
     APP_AUTHORIZATION_REFUSE_BTN: 'RECUSAR',
+    //SignIn.js
+    APP_SIGNIN_STEP_0: 'IDENTIFICAÇÃO',
+    APP_SIGNIN_STEP_1: 'MORADA',
+    APP_SIGNIN_STEP_2: 'PAGAMENTO',
 
     greeting : 'Olá',
     greeting_one: 'Bem vindo ao React Native!',
