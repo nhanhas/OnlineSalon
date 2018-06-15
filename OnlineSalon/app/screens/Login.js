@@ -30,7 +30,7 @@ export default class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      rememberOptionSelected: 0
+      rememberSelected: false
     };
 
     
@@ -73,6 +73,7 @@ export default class Login extends Component {
     return (
       <View style={styles.container}>
         
+        {/* Email Password and [Remember; Reset Pw] */}
         <View style={styles.inputsContainer}>
           <CustomInput  
             onChange={(newValue) => this.setState({username: newValue})}
@@ -86,17 +87,17 @@ export default class Login extends Component {
           {/* This will be 2 buttons simple */}
           <View style={styles.inlineButtons}>
             <TouchableOpacity onPress={this.setMemorizeFlag}>
-              <Text style={{color: '#67178c'}}>{i18n.t('APP_LOGIN_MEMORIZE_BTN')}</Text>
+              <Text style={styles.textColor}>{i18n.t('APP_LOGIN_MEMORIZE_BTN')}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={this.resetPassword}>
-              <Text style={{color: '#67178c'}}>{i18n.t('APP_LOGIN_RESET_PW_BTN')}</Text>
+              <Text style={styles.textColor}>{i18n.t('APP_LOGIN_RESET_PW_BTN')}</Text>
             </TouchableOpacity>
           </View>
-          
-          
+
         </View>
 
+        {/* Login and Sign Btn */}
         <View style={styles.buttonsContainer}>
           <CustomButton 
             label={i18n.t('APP_LOGIN_ENTER_BTN')}
@@ -108,6 +109,23 @@ export default class Login extends Component {
               onPress={() => {this.userLogin()}} />
         </View>
 
+        {/* disclaimer discription to bottom */}
+        <View style={styles.disclaimerContainer}>
+          <Text style={styles.textColor}>{i18n.t('APP_LOGIN_DISCLAIMER_DESCRIPTION')}</Text>
+          {/* 2 links to therms */}
+          <View style={styles.disclaimerInline}>
+            <TouchableOpacity onPress={this.setMemorizeFlag}>
+              <Text style={styles.textUnderline}>{i18n.t('APP_LOGIN_DISCLAIMER_THERMS')}</Text>
+            </TouchableOpacity>
+
+            <Text style={styles.textColor}>{i18n.t('APP_LOGIN_DISCLAIMER_DESCRIPTION_AND')}</Text>
+
+            <TouchableOpacity onPress={this.resetPassword}>
+              <Text style={styles.textUnderline}>{i18n.t('APP_LOGIN_DISCLAIMER_PRIVACY')}</Text>
+            </TouchableOpacity>
+          </View>
+
+        </View>
 
       </View>
     );
@@ -129,6 +147,7 @@ const styles = EStyleSheet.create({
     width: '70%'
   },
   inlineButtons: {
+    marginTop: 20,
     flexDirection:'row', 
     flexWrap:'wrap',
     alignItems: 'center',
@@ -138,9 +157,27 @@ const styles = EStyleSheet.create({
     marginTop: 50,
     width: '70%'
   },
-  signButton:{
-    color: '#ffffff'
+  textColor:{
+    color: '$xDarkPink'
+  },
+  disclaimerContainer:{
+    position: 'absolute',
+    bottom: 20,
+    flexDirection:'column', 
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  disclaimerInline:{
+    flexDirection:'row', 
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textUnderline:{
+    color: '$xDarkPink',
+    textDecorationLine: 'underline'
   }
+
+
 });
 
 
