@@ -4,12 +4,15 @@ import React, { Component } from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {
   Text,
+  TouchableOpacity,
   Button,
   View,
 } from 'react-native';
 
 import {CustomInput} from '../components/TextInputs/CustomInput';
 import {CustomButton} from '../components/Buttons/CustomButton';
+
+
 
 
 /**
@@ -22,9 +25,15 @@ export default class Login extends Component {
   
   constructor(props) {
     super(props);
+
+    //#1 - Initiale state vars
     this.state = {
       username: '',
+      password: '',
+      rememberOptionSelected: 0
     };
+
+    
   }
 
   /**
@@ -46,10 +55,21 @@ export default class Login extends Component {
     //#1 - Set new state for username model value
     this.setState({model: text});
   };
+  
+  //#C - Hanlder for Memorize Option
+  setMemorizeFlag = () => {
+
+  };
+
+  //#D - Hanlder for Reset Password
+  resetPassword = () => {
+
+  };
 
 
   //# Render #//
   render() {
+  
     return (
       <View style={styles.container}>
         
@@ -60,10 +80,21 @@ export default class Login extends Component {
 
           <CustomInput  
             onChange={(newValue) => this.setState({password: newValue})}
-            label = {i18n.t('APP_LOGIN_PASSWORD')} />
+            label = {i18n.t('APP_LOGIN_PASSWORD')} 
+            isPassword={true}/>
 
+          {/* This will be 2 buttons simple */}
+          <View style={styles.inlineButtons}>
+            <TouchableOpacity onPress={this.setMemorizeFlag}>
+              <Text style={{color: '#67178c'}}>{i18n.t('APP_LOGIN_MEMORIZE_BTN')}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={this.resetPassword}>
+              <Text style={{color: '#67178c'}}>{i18n.t('APP_LOGIN_RESET_PW_BTN')}</Text>
+            </TouchableOpacity>
+          </View>
           
-
+          
         </View>
 
         <View style={styles.buttonsContainer}>
@@ -96,6 +127,12 @@ const styles = EStyleSheet.create({
   inputsContainer: {
     marginTop: 150,
     width: '70%'
+  },
+  inlineButtons: {
+    flexDirection:'row', 
+    flexWrap:'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   buttonsContainer: {
     marginTop: 50,

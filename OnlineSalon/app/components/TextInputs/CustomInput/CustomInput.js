@@ -11,13 +11,13 @@ import styles from './styles';
  * Present in multiple Screens
  */
 
-const CustomInput = ({ label, onChange }) => (
+const CustomInput = ({ label, onChange, isPassword }) => (
     <View style={styles.container}> 
       <FormInput  onChangeText={onChange}
                   placeholder={label}
                   containerStyle={styles.customContainerStyle}
                   inputStyle={styles.customInputStyle}
-                  />
+                  secureTextEntry={isPassword} />
     </View>
 );
 

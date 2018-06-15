@@ -12,7 +12,8 @@ export default EStyleSheet.create({
     },
     customInputStyle: {
         width : '100%',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '$xDarkPink'
     }
 
 });
