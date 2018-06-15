@@ -8,7 +8,8 @@ import { StackNavigator } from 'react-navigation';
 
 import Language from '../screens/Language';
 import Login from '../screens/Login';
-import Options from '../screens/Options';
+import Authorization from '../screens/Authorization';
+import SignIn from '../screens/SignIn';
 
 //Login Stack
 const LoginStack = StackNavigator(
@@ -27,11 +28,18 @@ const LoginStack = StackNavigator(
           headerTitle: 'Login',
         },
       },
-      Options: {
-        screen: Options,
+      Authorization: {
+        screen: Authorization,
         navigationOptions: {
           header: () => null,
-          headerTitle: 'Options',
+          headerTitle: 'Authorization',
+        },
+      },
+      SignIn: {
+        screen: SignIn,
+        navigationOptions: {
+          header: () => null,
+          headerTitle: 'SignIn',
         },
       }
   },

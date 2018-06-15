@@ -2,7 +2,9 @@
                                             Screens
 #########################################################################################################
 - Login Stack:
-    i.      Stage #1 - [undefined]
-    ii.     Stage #2 - [Language.js]        - Selection of app Language
-    iii.    Stage #3 - [Login.js]           - User set the user/pw OR create a new acc
-    iv.     Stage #4 - [Authorization.js]   - User confirms app to use its GEO location
+    i.      Stage #1    - [undefined]
+    ii.     Stage #2    - [Language.js]        - Selection of app Language
+    iii.    Stage #3    - [Login.js]           - User set the user/pw OR create a new acc
+        a.  - [Authorization.js]   - User confirms app to use its GEO location
+        b.  - [SignIn.js]          - User navigate to this screen to begin registration
+        

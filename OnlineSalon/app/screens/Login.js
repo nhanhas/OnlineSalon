@@ -46,25 +46,23 @@ export default class Login extends Component {
   
   //#A - Login function 
   userLogin = () => {
-    alert(this.state.username);
-    //this.props.navigation.navigate('Options');
+    this.props.navigation.navigate('Authorization');
   };
   
-  //#B - Handler for CustomInput model change
-  onChangeCustomInput = (model, newValue) => {
-    //#1 - Set new state for username model value
-    this.setState({model: text});
-  };
-  
-  //#C - Hanlder for Memorize Option
+  //#B - Hanlder for Memorize Option
   setMemorizeFlag = () => {
 
   };
 
-  //#D - Hanlder for Reset Password
+  //#C - Hanlder for Reset Password
   resetPassword = () => {
 
   };
+
+  //#D - Handler to navigate to SignIn
+  signIn = () => {
+    this.props.navigation.navigate('SignIn');
+  }
 
 
   //# Render #//
@@ -106,7 +104,7 @@ export default class Login extends Component {
           <Button 
               color='#67178c'
               title={i18n.t('APP_LOGIN_SIGN_BTN')} 
-              onPress={() => {this.userLogin()}} />
+              onPress={() => {this.signIn()}} />
         </View>
 
         {/* disclaimer discription to bottom */}

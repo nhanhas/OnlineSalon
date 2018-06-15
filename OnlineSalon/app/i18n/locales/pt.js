@@ -1,4 +1,5 @@
 export default {
+    //Login.js
     APP_LOGIN_EMAIL : 'Email',
     APP_LOGIN_PASSWORD: 'Password',
     APP_LOGIN_ENTER_BTN: 'INICIAR SESSÃO',
@@ -9,6 +10,11 @@ export default {
     APP_LOGIN_DISCLAIMER_THERMS: 'Termos e Condições',
     APP_LOGIN_DISCLAIMER_PRIVACY: 'Política de Privacidade',
     APP_LOGIN_DISCLAIMER_DESCRIPTION_AND: ' e ',
+    //Authorization.js
+    APP_AUTHORIZATION_INFO_LABEL: 'A Salão Online \n precisa de aceder \n à sua localização',
+    APP_AUTHORIZATION_ALLOW_BTN: 'PERMITIR',
+    APP_AUTHORIZATION_REFUSE_BTN: 'RECUSAR',
+
     greeting : 'Olá',
     greeting_one: 'Bem vindo ao React Native!',
     greeting_two: 'Para começar, edit App.js'
