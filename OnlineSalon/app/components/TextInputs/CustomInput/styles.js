@@ -14,6 +14,16 @@ export default EStyleSheet.create({
         width : '100%',
         textAlign: 'center',
         color: '$xDarkPink'
+    },
+    descriptionLabelPurple:{
+        marginTop:0,
+        fontSize: 10,
+        color:'$xDarkPink'
+    },
+    descriptionLabelRed:{
+        marginTop:0,
+        fontSize: 10,
+        color:'red'
     }
 
 });

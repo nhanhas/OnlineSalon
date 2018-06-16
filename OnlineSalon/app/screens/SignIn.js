@@ -182,9 +182,13 @@ export default class SignIn extends Component {
               <View style={styles.inputsContainer}>
                 <CustomInput
                   label = {i18n.t('APP_SIGNIN_STEP_0_NAME')} 
+                  description = {'teste'}
+                  descriptionColor = {0}
                   onChange={(name) => {this.onChangeInput({name})}} />
                 <CustomInput 
                   label = {i18n.t('APP_SIGNIN_STEP_0_EMAIL')} 
+                  description = {'teste'}
+                  descriptionColor = {1}
                   onChange={(email) => {this.onChangeInput({email})}} />
                 <CustomInput 
                   isPassword={true}
