@@ -13,7 +13,8 @@ EStyleSheet.build({
     $primaryOrange: '#D57A66',
     $primaryGreen: '#00BD9D',
     $primaryPurple: '#9E768F',
-  
+
+    $disabledPink: '#f38dc67a',
     $lightPink: '#fce8f2',
     $normalPink: '#f38dc6',
     $darkPink: '#c482bf',  

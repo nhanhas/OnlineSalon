@@ -19,6 +19,16 @@ export default {
     APP_SIGNIN_STEP_1: 'MORADA',
     APP_SIGNIN_STEP_2: 'PAGAMENTO',
 
+    APP_SIGNIN_STEP_0_NAME: 'Nome',
+    APP_SIGNIN_STEP_0_EMAIL: 'Email',
+    APP_SIGNIN_STEP_0_PASSWORD: 'Password',
+    APP_SIGNIN_STEP_0_REPEAT_PW: 'Repetir Password',
+    APP_SIGNIN_STEP_0_PHONE: 'Telemóvel',
+
+    APP_SIGNIN_SAVE_BTN: 'GRAVAR',
+    APP_SIGNIN_ADDRESS_BTN: 'MORADA',
+    APP_SIGNIN_PAYMENT_BTN: 'PAGAMENTO',
+
     greeting : 'Olá',
     greeting_one: 'Bem vindo ao React Native!',
     greeting_two: 'Para começar, edit App.js'

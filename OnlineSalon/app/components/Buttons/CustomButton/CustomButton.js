@@ -13,9 +13,11 @@ import styles from './styles';
  * Present in multiple Screens
  */
 
-const CustomButton = ({ label, hasIcon, onPress }) => (
+const CustomButton = ({ label, hasIcon, isDisabled, onPress }) => (
     <View style={styles.container}> 
       <Button
+        disabled={isDisabled}
+        disabledStyle={styles.disabledColor}
         containerViewStyle={styles.customContainerStyle}
         buttonStyle={styles.customButtonStyle}
         onPress={onPress}

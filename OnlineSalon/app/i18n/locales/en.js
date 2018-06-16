@@ -18,6 +18,16 @@ export default {
     APP_SIGNIN_STEP_0: 'IDENTIFICATION',
     APP_SIGNIN_STEP_1: 'ADDRESS',
     APP_SIGNIN_STEP_2: 'PAYMENT',
+    
+    APP_SIGNIN_STEP_0_NAME: 'Name',
+    APP_SIGNIN_STEP_0_EMAIL: 'Email',
+    APP_SIGNIN_STEP_0_PASSWORD: 'Password',
+    APP_SIGNIN_STEP_0_REPEAT_PW: 'Repeat Password',
+    APP_SIGNIN_STEP_0_PHONE: 'Mobile',
+
+    APP_SIGNIN_SAVE_BTN: 'SAVE',
+    APP_SIGNIN_ADDRESS_BTN: 'ADDRESS',
+    APP_SIGNIN_PAYMENT_BTN: 'PAYMENT',
 
     greeting: 'Hello',
     greeting_one: 'Welcome to React Native!',
