@@ -5,14 +5,16 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import {
     ScrollView,
     TouchableOpacity,
-    Button,
+    Image,
     Text,
-    View
+    View,
+    PixelRatio
   } from 'react-native';
 
 import {CustomInput} from '../components/TextInputs/CustomInput';
 import {CustomButton} from '../components/Buttons/CustomButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ImagePicker from 'react-native-image-picker';
 
 /**
  * Sign in Form
@@ -25,7 +27,7 @@ export default class SignIn extends Component {
     //#1 - Initiale state vars
     this.state = {
       step: 0,
-
+      ImageSource : null,
       name: '',
       email: '',
       password: '',
@@ -79,6 +81,57 @@ export default class SignIn extends Component {
 
   }
 
+  //#C - Handler to Open Gallery
+  openPhotoGallery = () => {
+    const options = {
+      quality: 1.0,
+      maxWidth: 500,
+      maxHeight: 500,
+      storageOptions: {
+        skipBackup: true
+      }
+    };
+
+    ImagePicker.launchImageLibrary(options, (response)  => {
+      let source = { uri: response.uri };
+  
+          // You can also display the image using data:
+          // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+  
+          this.setState({
+ 
+            ImageSource: source
+ 
+          });
+    });
+  }
+
+  //#D - Handler to Open Camera
+  openCameraRoll = () => {
+    const options = {
+      quality: 1.0,
+      maxWidth: 500,
+      maxHeight: 500,
+      storageOptions: {
+        skipBackup: true
+      }
+    };
+
+    ImagePicker.launchCamera(options, (response)  => {
+      let source = { uri: response.uri };
+
+        // You can also display the image using data:
+        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+        this.setState({
+
+          ImageSource: source
+
+        });
+    });
+  
+  }
+  
   //# Render #//
   render() {
     return (
@@ -95,46 +148,72 @@ export default class SignIn extends Component {
         
         {/* Identification */}
         {this.state.step === 0 && (
-          <ScrollView  width={'70%'} contentContainerStyle={styles.scrollContainer}>
-            {/* Photo picker */}
-            <View style={styles.photoContainer}>
+          <View style={styles.scrollViewContainer}>
+            <ScrollView  width={'100%'}>
+
+              {/* Photo picker */}
+              <View style={styles.photoContainer}>
+                {/* Thumb */}
+                <TouchableOpacity style={styles.photoButtons} onPress={this.openCameraRoll.bind(this)}>
+                  <View style={styles.ImageContainer}>
+                    { this.state.ImageSource === null ? 
+                      (<Text style={{position:'absolute', top: 40, left:45, fontSize:16, color:'white'}}>+</Text>) 
+                      :
+                      (<Image style={styles.ImageContainer} source={this.state.ImageSource} />)  
+                    }
+                  </View>
+                </TouchableOpacity>
+
+                {/* Photo */}
+                <TouchableOpacity style={styles.photoButtons} onPress={this.openCameraRoll.bind(this)}>
+                  <Icon name="camera" size={35} color="#67178c" />
+                  <Text style={{textAlign:'center', color: '#67178c'}}>{i18n.t('APP_SIGNIN_STEP_0_PHOTO_BTN')}</Text>
+                </TouchableOpacity>
+                  
+                {/* Gallery */}
+                <TouchableOpacity style={styles.photoButtons} onPress={this.openPhotoGallery.bind(this)}>
+                  <Icon name="photo" size={35} color="#67178c" />
+                  <Text style={{textAlign:'center', color: '#67178c'}}>{i18n.t('APP_SIGNIN_STEP_0_GALLERY_BTN')}</Text>
+                </TouchableOpacity>
+
+              </View>
               
-            </View>
-            {/* inputs */}
-            <View style={styles.inputsContainer}>
-              <CustomInput
-                label = {i18n.t('APP_SIGNIN_STEP_0_NAME')} 
-                onChange={(name) => {this.onChangeInput({name})}} />
-              <CustomInput 
-                label = {i18n.t('APP_SIGNIN_STEP_0_EMAIL')} 
-                onChange={(email) => {this.onChangeInput({email})}} />
-              <CustomInput 
-                isPassword={true}
-                label = {i18n.t('APP_SIGNIN_STEP_0_PASSWORD')} 
-                onChange={(password) => {this.onChangeInput({password})}} />
-              <CustomInput 
-                isPassword={true}
-                label = {i18n.t('APP_SIGNIN_STEP_0_REPEAT_PW')} 
-                onChange={(repeatPassword) => {this.onChangeInput({repeatPassword})}} />
-              <CustomInput 
-                label = {i18n.t('APP_SIGNIN_STEP_0_PHONE')} 
-                onChange={(phone) => {this.onChangeInput({phone})}} />
+              {/* inputs */}
+              <View style={styles.inputsContainer}>
+                <CustomInput
+                  label = {i18n.t('APP_SIGNIN_STEP_0_NAME')} 
+                  onChange={(name) => {this.onChangeInput({name})}} />
+                <CustomInput 
+                  label = {i18n.t('APP_SIGNIN_STEP_0_EMAIL')} 
+                  onChange={(email) => {this.onChangeInput({email})}} />
+                <CustomInput 
+                  isPassword={true}
+                  label = {i18n.t('APP_SIGNIN_STEP_0_PASSWORD')} 
+                  onChange={(password) => {this.onChangeInput({password})}} />
+                <CustomInput 
+                  isPassword={true}
+                  label = {i18n.t('APP_SIGNIN_STEP_0_REPEAT_PW')} 
+                  onChange={(repeatPassword) => {this.onChangeInput({repeatPassword})}} />
+                <CustomInput 
+                  label = {i18n.t('APP_SIGNIN_STEP_0_PHONE')} 
+                  onChange={(phone) => {this.onChangeInput({phone})}} />
 
-            </View>
+              </View>
 
-            <View style={styles.buttonsContainer}>
-              <CustomButton 
-                label={i18n.t('APP_SIGNIN_SAVE_BTN')}
-                onPress = {this.nextStep} />
+              <View style={styles.buttonsContainer}>
+                <CustomButton 
+                  label={i18n.t('APP_SIGNIN_SAVE_BTN')}
+                  onPress = {this.nextStep} />
 
-              <CustomButton 
-                isDisabled={!this.state.isFirstStepValid}
-                hasIcon={true}
-                label={i18n.t('APP_SIGNIN_ADDRESS_BTN')}
-                onPress = {this.nextStep} />
-            </View> 
+                <CustomButton 
+                  isDisabled={!this.state.isFirstStepValid}
+                  hasIcon={true}
+                  label={i18n.t('APP_SIGNIN_ADDRESS_BTN')}
+                  onPress = {this.nextStep} />
+              </View> 
 
-          </ScrollView>
+            </ScrollView>
+          </View>
         )}
         
         {/* Address */}
@@ -190,22 +269,42 @@ const styles = EStyleSheet.create({
       marginLeft: 10,
       marginRight: 10
     },
-    scrollContainer: {
-      flex: 1,
-      paddingVertical: 200,
+    scrollViewContainer: {
+      flex:1, 
+      marginTop:200
     },
     photoContainer: {
       flexDirection:'row', 
       flexWrap:'wrap',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'space-between'
+    },
+    photoButtons:{
+      flexDirection:'column', 
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginRight: 20,
+      marginLeft: 20
+    },
+    ImageContainer: {
+      borderRadius: 50,
+      width: 100,
+      height: 100,
+      borderColor: 'white',
+      borderWidth: 5 / PixelRatio.get(),
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '$disabledPink',
     },
     inputsContainer: {
-      width: '100%'
+      marginTop: 20,
+      marginRight: 30,
+      marginLeft: 30
     },
     buttonsContainer: {
       marginTop: 20,
-      width: '100%'
+      marginRight: 30,
+      marginLeft: 30
     }
 });
   

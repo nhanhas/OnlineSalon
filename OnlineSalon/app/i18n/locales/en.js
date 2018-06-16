@@ -19,6 +19,8 @@ export default {
     APP_SIGNIN_STEP_1: 'ADDRESS',
     APP_SIGNIN_STEP_2: 'PAYMENT',
     
+    APP_SIGNIN_STEP_0_PHOTO_BTN : 'Take\nPhoto',    
+    APP_SIGNIN_STEP_0_GALLERY_BTN : 'Choose\nFrom Gallery',    
     APP_SIGNIN_STEP_0_NAME: 'Name',
     APP_SIGNIN_STEP_0_EMAIL: 'Email',
     APP_SIGNIN_STEP_0_PASSWORD: 'Password',

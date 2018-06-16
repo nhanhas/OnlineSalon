@@ -19,6 +19,8 @@ export default {
     APP_SIGNIN_STEP_1: 'MORADA',
     APP_SIGNIN_STEP_2: 'PAGAMENTO',
 
+    APP_SIGNIN_STEP_0_PHOTO_BTN : 'Tirar\nFotografia',    
+    APP_SIGNIN_STEP_0_GALLERY_BTN : 'Escolher\nDa Galeria',    
     APP_SIGNIN_STEP_0_NAME: 'Nome',
     APP_SIGNIN_STEP_0_EMAIL: 'Email',
     APP_SIGNIN_STEP_0_PASSWORD: 'Password',
