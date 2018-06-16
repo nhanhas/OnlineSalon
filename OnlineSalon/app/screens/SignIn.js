@@ -96,6 +96,10 @@ export default class SignIn extends Component {
         {/* Identification */}
         {this.state.step === 0 && (
           <ScrollView  width={'70%'} contentContainerStyle={styles.scrollContainer}>
+            {/* Photo picker */}
+            <View style={styles.photoContainer}>
+              
+            </View>
             {/* inputs */}
             <View style={styles.inputsContainer}>
               <CustomInput
@@ -189,6 +193,12 @@ const styles = EStyleSheet.create({
     scrollContainer: {
       flex: 1,
       paddingVertical: 200,
+    },
+    photoContainer: {
+      flexDirection:'row', 
+      flexWrap:'wrap',
+      alignItems: 'center',
+      justifyContent: 'center'
     },
     inputsContainer: {
       width: '100%'
