@@ -17,12 +17,12 @@ export default EStyleSheet.create({
     },
     descriptionLabelPurple:{
         marginTop:0,
-        fontSize: 10,
+        fontSize: 9,
         color:'$xDarkPink'
     },
     descriptionLabelRed:{
         marginTop:0,
-        fontSize: 10,
+        fontSize: 9,
         color:'red'
     }
 

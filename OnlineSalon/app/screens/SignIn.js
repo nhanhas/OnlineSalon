@@ -182,24 +182,30 @@ export default class SignIn extends Component {
               <View style={styles.inputsContainer}>
                 <CustomInput
                   label = {i18n.t('APP_SIGNIN_STEP_0_NAME')} 
-                  description = {'teste'}
+                  description = {i18n.t('APP_SIGNIN_STEP_0_NAME_DESC')}
                   descriptionColor = {0}
                   onChange={(name) => {this.onChangeInput({name})}} />
                 <CustomInput 
                   label = {i18n.t('APP_SIGNIN_STEP_0_EMAIL')} 
-                  description = {'teste'}
+                  description = {i18n.t('APP_SIGNIN_STEP_0_EMAIL_DESC')}
                   descriptionColor = {1}
                   onChange={(email) => {this.onChangeInput({email})}} />
                 <CustomInput 
                   isPassword={true}
                   label = {i18n.t('APP_SIGNIN_STEP_0_PASSWORD')} 
+                  description = {i18n.t('APP_SIGNIN_STEP_0_PASSWORD_DESC')}
+                  descriptionColor = {0}
                   onChange={(password) => {this.onChangeInput({password})}} />
                 <CustomInput 
                   isPassword={true}
                   label = {i18n.t('APP_SIGNIN_STEP_0_REPEAT_PW')} 
+                  description = {i18n.t('APP_SIGNIN_STEP_0_REPEAT_PW_DESC')}
+                  descriptionColor = {1}
                   onChange={(repeatPassword) => {this.onChangeInput({repeatPassword})}} />
                 <CustomInput 
                   label = {i18n.t('APP_SIGNIN_STEP_0_PHONE')} 
+                  description = {i18n.t('APP_SIGNIN_STEP_0_PHONE_DESC')}
+                  descriptionColor = {0}
                   onChange={(phone) => {this.onChangeInput({phone})}} />
 
               </View>
