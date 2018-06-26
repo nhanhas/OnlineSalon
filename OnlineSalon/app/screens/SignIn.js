@@ -148,7 +148,7 @@ export default class SignIn extends Component {
         
         {/* Identification */}
         {this.state.step === 0 && (
-          <View style={styles.scrollViewContainer}>
+          <View style={styles.scrollViewContainer} width={'100%'}>
             <ScrollView  width={'100%'}>
 
               {/* Photo picker */}
@@ -179,7 +179,7 @@ export default class SignIn extends Component {
               </View>
               
               {/* inputs */}
-              <View style={styles.inputsContainer}>
+              <View style={styles.inputsContainerFirst}>
                 <CustomInput
                   label = {i18n.t('APP_SIGNIN_STEP_0_NAME')} 
                   description = {i18n.t('APP_SIGNIN_STEP_0_NAME_DESC')}
@@ -210,7 +210,7 @@ export default class SignIn extends Component {
 
               </View>
 
-              <View style={styles.buttonsContainer}>
+              <View style={styles.buttonsContainerFirst}>
                 <CustomButton 
                   label={i18n.t('APP_SIGNIN_SAVE_BTN')}
                   onPress = {this.nextStep} />
@@ -228,16 +228,97 @@ export default class SignIn extends Component {
         
         {/* Address */}
         {this.state.step === 1 && (
-          <Text style={styles.welcome}>
-            Step 1
-          </Text>
+          <View style={styles.scrollViewContainer}>
+            
+              {/* inputs */}
+              <View style={styles.inputsContainer}>
+                <CustomInput
+                  label = {i18n.t('APP_SIGNIN_STEP_1_ADDRESS1')} 
+                  description = {i18n.t('APP_SIGNIN_STEP_1_ADDRESS1_DESC')}
+                  descriptionColor = {0}
+                  onChange={(address1) => {this.onChangeInput({address1})}} />
+                <CustomInput             
+                  description = {i18n.t('APP_SIGNIN_STEP_1_ADDRESS2_DESC')}
+                  descriptionColor = {0}
+                  onChange={(address2) => {this.onChangeInput({address2})}} />
+                <CustomInput 
+                  label = {i18n.t('APP_SIGNIN_STEP_1_ZIPCODE')} 
+                  description = {i18n.t('APP_SIGNIN_STEP_1_ZIPCODE_DESC')}
+                  descriptionColor = {0}
+                  onChange={(zipcode) => {this.onChangeInput({zipcode})}} />
+                <CustomInput 
+                  label = {i18n.t('APP_SIGNIN_STEP_1_CITY')} 
+                  description = {i18n.t('APP_SIGNIN_STEP_1_CITY_DESC')}
+                  descriptionColor = {0}
+                  onChange={(city) => {this.onChangeInput({city})}} />
+              
+              </View>
+
+              <View style={styles.buttonsContainer}>
+                <CustomButton 
+                  label={i18n.t('APP_SIGNIN_SAVE_BTN')}
+                  onPress = {this.nextStep} />
+
+                <CustomButton 
+                  isDisabled={!this.state.isFirstStepValid}
+                  hasIcon={true}
+                  label={i18n.t('APP_SIGNIN_PAYMENT_BTN')}
+                  onPress = {this.nextStep} />
+              </View> 
+
+          </View>
         )}
 
         {/* Payment */}
         {this.state.step === 2 && (
-          <Text style={styles.welcome}>
-            Step 2
-          </Text>
+          
+          <View style={styles.scrollViewContainer}>
+            
+              {/* inputs */}
+              <View style={styles.inputsContainer}>
+                <Text style={styles.lastStepSelected}>{i18n.t('APP_SIGNIN_STEP_2_TITLE')} </Text>
+
+                <CustomInput
+                  label = {i18n.t('APP_SIGNIN_STEP_2_CARD_NAME')} 
+                  description = {i18n.t('APP_SIGNIN_STEP_2_CARD_NAME_DESC')}
+                  descriptionColor = {0}
+                  onChange={(cardName) => {this.onChangeInput({cardName})}} />
+                
+                <View style={styles.inputsContainerCard}>
+                  <View width={'30%'}>
+                    <CustomInput                           
+                      label = {i18n.t('APP_SIGNIN_STEP_2_CARD_MONTH')}         
+                      description = {i18n.t('APP_SIGNIN_STEP_2_CARD_MONTH_DESC')}
+                      descriptionColor = {0}
+                      onChange={(cardMonth) => {this.onChangeInput({cardMonth})}} />
+                  </View>
+                  
+                  <View marginLeft={15}  width={'30%'}>
+                    <CustomInput 
+                      label = {i18n.t('APP_SIGNIN_STEP_2_CARD_YEAR')} 
+                      description = {i18n.t('APP_SIGNIN_STEP_2_CARD_YEAR_DESC')}
+                      descriptionColor = {0}
+                      onChange={(cardYear) => {this.onChangeInput({cardYear})}} />
+                  </View>
+
+                  <View marginLeft={15} width={'30%'}>
+                    <CustomInput 
+                      label = {i18n.t('APP_SIGNIN_STEP_2_CARD_CCV')} 
+                      description = {i18n.t('APP_SIGNIN_STEP_2_CARD_CCV_DESC')}
+                      descriptionColor = {0}
+                      onChange={(cardCcv) => {this.onChangeInput({cardCcv})}} />
+                  </View>
+                </View>
+              </View>
+
+              <View style={styles.buttonsContainer} marginTop={80}>
+                <CustomButton 
+                  label={i18n.t('APP_SIGNIN_SAVE_BTN')}
+                  onPress = {this.nextStep} />
+              </View> 
+
+          </View>
+
         )}
 
 
@@ -281,7 +362,8 @@ const styles = EStyleSheet.create({
     },
     scrollViewContainer: {
       flex:1, 
-      marginTop:200
+      marginTop:200,
+      width: '75%'
     },
     photoContainer: {
       flexDirection:'row', 
@@ -307,14 +389,34 @@ const styles = EStyleSheet.create({
       backgroundColor: '$disabledPink',
     },
     inputsContainer: {
+      width: '100%',
       marginTop: 20,
-      marginRight: 30,
-      marginLeft: 30
     },
     buttonsContainer: {
+      width : '100%',
       marginTop: 20,
-      marginRight: 30,
-      marginLeft: 30
+    },
+    inputsContainerFirst: {
+      marginTop: 20,
+      marginLeft: 40,
+      marginRight: 40
+    },
+    buttonsContainerFirst: {
+      marginTop: 20,
+      marginLeft: 40,
+      marginRight: 40
+    },
+    inputsContainerCard:{
+        flexDirection:'row',
+    },
+    lastStepSelected:{
+      fontWeight: '600',
+      fontSize: 16,
+      color: '$xDarkPink',
+      marginLeft: 10,
+      marginRight: 10,
+      marginBottom: 50
     }
+
 });
   
