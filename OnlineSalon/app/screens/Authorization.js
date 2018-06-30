@@ -25,7 +25,7 @@ export default class Authorization extends Component {
   
     //#A - Allow App GEO Location Function
     allowApp = () =>{
-        //this.props.navigation.navigate('Login');
+        this.props.navigation.navigate('Home');
     };
 
     //#B - Refuse App GEO Location Function
