@@ -13,19 +13,19 @@ import styles from './styles';
 
 /**
  * Component
- * This is the Top Header menu
+ * This is the Top Footer menu
  * available in all app
  */
 
-const Header = ({ onExpandMenu }) => (
+const Footer = ({ onExpandFavorites }) => (
     <View style={styles.container}>
 
-        <Icon name="bars" size={40} color='white' onPress={onExpandMenu} />
+        <Icon name="heart" size={30} color='white' onPress={onExpandFavorites} />
 
     </View>
 );
 
-Header.propTypes = {
+Footer.propTypes = {
 };
 
-export default Header;
+export default Footer;
