@@ -41,6 +41,21 @@ function FavoritePanel(props) {
     );
 }
 
+/**
+ * Return a rendered "Services" Panel
+ */ 
+function ServicesPanel(props) {
+    if (!props.isVisible) {
+      return null;
+    }
+  
+    return (
+      <View style={servicesPanelstyles.panelContainer}>
+        <Text>Services</Text>
+      </View>
+    );
+}
+
 
 /**
  * Main Application Screen
@@ -59,6 +74,7 @@ export default class Home extends Component {
 
         this.handleOnExpandMenu = this.handleOnExpandMenu.bind(this);
         this.handleOnExpandFavorites = this.handleOnExpandFavorites.bind(this);
+        this.handleOnExpandServices = this.handleOnExpandServices.bind(this);
     }
 
     /**
@@ -82,6 +98,13 @@ export default class Home extends Component {
           showFavoritesPanel: !prevState.showFavoritesPanel
         }));
     }
+
+    //#C - Handle on Menu click to expand Services
+    handleOnExpandServices() {
+        this.setState(prevState => ({
+          showServicesPanel: !prevState.showServicesPanel
+        }));
+    }
     
     //# Render #//
     render() {
@@ -95,11 +118,15 @@ export default class Home extends Component {
                 {/* Messages Panel */}
                 <MenuPanel isVisible={this.state.showMenuPanel} />
 
-                {/* Messages Panel */}
+                {/* Favorites Panel */}
                 <FavoritePanel isVisible={this.state.showFavoritesPanel} />
+
+                {/* Services Panel */}
+                <ServicesPanel isVisible={this.state.showServicesPanel} />
 
                 {/* Foot Menu */}
                 <Footer onExpandFavorites={this.handleOnExpandFavorites} 
+                        onExpandServices={this.handleOnExpandServices} 
                         totalMessages={this.state.totalMessages} 
                         totalServices={this.state.totalServices}></Footer>
 
@@ -155,7 +182,27 @@ const favoritePanelstyles = EStyleSheet.create({
     panelContainer:{
         backgroundColor: 'white',
         position: 'absolute',
-        top: 70,
+        top: 90,
+        left: 0,
+        right: 0,
+        bottom: 60
+    }
+});
+
+/**
+ * Services Panel Design
+ */
+const servicesPanelstyles = EStyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '$lightPink',
+    },
+    panelContainer:{
+        backgroundColor: 'white',
+        position: 'absolute',
+        top: 90,
         left: 0,
         right: 0,
         bottom: 60
