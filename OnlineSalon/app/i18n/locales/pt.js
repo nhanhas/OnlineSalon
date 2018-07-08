@@ -62,6 +62,8 @@ export default {
     APP_COMPONENT_HEADER_HEART_4: 'OCUPADO',
     APP_COMPONENT_HEADER_FILTER: 'FILTRAR',
 
+    APP_COMPONENT_FOOTER_FAVORITES: 'FAVORITOS',
+
     greeting : 'Olá',
     greeting_one: 'Bem vindo ao React Native!',
     greeting_two: 'Para começar, edit App.js'

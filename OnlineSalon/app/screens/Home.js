@@ -52,7 +52,9 @@ export default class Home extends Component {
         super(props);
         this.state = {
             showMenuPanel: false,
-            showFavoritesPanel: false
+            showFavoritesPanel: false,
+            totalMessages: 4 ,
+            totalServices: 5
         };
 
         this.handleOnExpandMenu = this.handleOnExpandMenu.bind(this);
@@ -88,7 +90,7 @@ export default class Home extends Component {
                 {/* Head Menu */}
                 <Header onExpandMenu={this.handleOnExpandMenu}></Header>
 
-                <Text>Home</Text>
+                <Text>MAP</Text>
 
                 {/* Messages Panel */}
                 <MenuPanel isVisible={this.state.showMenuPanel} />
@@ -97,7 +99,9 @@ export default class Home extends Component {
                 <FavoritePanel isVisible={this.state.showFavoritesPanel} />
 
                 {/* Foot Menu */}
-                <Footer onExpandFavorites={this.handleOnExpandFavorites}></Footer>
+                <Footer onExpandFavorites={this.handleOnExpandFavorites} 
+                        totalMessages={this.state.totalMessages} 
+                        totalServices={this.state.totalServices}></Footer>
 
             </View>
 

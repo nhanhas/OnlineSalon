@@ -29,25 +29,25 @@ const Header = ({ onExpandMenu }) => (
             <IconIOS name="ios-menu-outline" size={40} color='white' onPress={onExpandMenu} />
 
             <View style={styles.iconContent}>
-                <Icon name="heart" size={30} color='white'/>
+                <Icon name="heart" size={30} color='red'/>
                 <Text style={styles.textTitle}>{i18n.t('APP_COMPONENT_HEADER_HEART_1')}</Text>
                 <Text style={styles.textDescription}>{i18n.t('APP_COMPONENT_HEADER_HEART_EXPLAIN_1')}</Text>
             </View>
 
             <View style={styles.iconContent}>
-                <Icon name="heart" size={30} color='white'/>
+                <Icon name="heart" size={30} color='green'/>
                 <Text style={styles.textTitle}>{i18n.t('APP_COMPONENT_HEADER_HEART_2')}</Text>
                 <Text style={styles.textDescription}>{i18n.t('APP_COMPONENT_HEADER_HEART_EXPLAIN_2')}</Text>
             </View>
 
             <View style={styles.iconContent}>
-                <Icon name="heart" size={30} color='white'/>
+                <Icon name="heart" size={30} color='orange'/>
                 <Text style={styles.textTitle}>{i18n.t('APP_COMPONENT_HEADER_HEART_3')}</Text>
                 <Text style={styles.textDescription}></Text>
             </View>
 
             <View style={styles.iconContent}>
-                <Icon name="heart" size={30} color='white'/>
+                <Icon name="heart" size={30} color='gray'/>
                 <Text style={styles.textTitle}>{i18n.t('APP_COMPONENT_HEADER_HEART_4')}</Text>
                 <Text style={styles.textDescription}></Text>
             </View>
