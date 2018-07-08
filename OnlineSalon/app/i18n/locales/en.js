@@ -54,6 +54,14 @@ export default {
     APP_SIGNIN_ADDRESS_BTN: 'ADDRESS',
     APP_SIGNIN_PAYMENT_BTN: 'PAYMENT',
 
+    APP_COMPONENT_HEADER_HEART_1: 'IN',
+    APP_COMPONENT_HEADER_HEART_EXPLAIN_1 : '(RESIDENCE)',
+    APP_COMPONENT_HEADER_HEART_2: 'OUT',
+    APP_COMPONENT_HEADER_HEART_EXPLAIN_2 : '(SALON)',
+    APP_COMPONENT_HEADER_HEART_3: 'IN/OUT',
+    APP_COMPONENT_HEADER_HEART_4: 'BUSY',
+    APP_COMPONENT_HEADER_FILTER: 'FILTER',
+
     greeting: 'Hello',
     greeting_one: 'Welcome to React Native!',
     greeting_two: 'To get started, edit App.js'

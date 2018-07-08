@@ -131,7 +131,7 @@ const menuPanelstyles = EStyleSheet.create({
     panelContainer:{
         backgroundColor: 'white',
         position: 'absolute',
-        top: 70,
+        top: 90,
         left: 0,
         right: 0,
         bottom: 60

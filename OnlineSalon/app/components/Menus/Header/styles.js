@@ -6,9 +6,31 @@ export default EStyleSheet.create({
         left: 0,
         right: 0,
         top: 0,
-        height: 70,
+        height: 90,
         backgroundColor: '$xDarkPink',
-        paddingTop: 15,
-        paddingLeft: 15
+        paddingTop: 25,
+        paddingLeft: 15,
+        paddingRight: 15
+    },
+    iconsRow:{
+        flexWrap: 'wrap', 
+        alignItems: 'center',
+        flexDirection:'row',
+        justifyContent: 'space-between'
+    },
+    iconContent:{
+        flexWrap: 'wrap', 
+        alignItems: 'center',
+        flexDirection:'column',
+    },
+    textTitle:{
+        color: 'white',
+        fontSize: 10,
+        fontWeight: '900',
+    },
+    textDescription:{
+        color: 'white',
+        fontSize: 9
     }
+
 });

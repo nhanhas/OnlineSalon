@@ -54,6 +54,14 @@ export default {
     APP_SIGNIN_ADDRESS_BTN: 'MORADA',
     APP_SIGNIN_PAYMENT_BTN: 'PAGAMENTO',
 
+    APP_COMPONENT_HEADER_HEART_1: 'IN',
+    APP_COMPONENT_HEADER_HEART_EXPLAIN_1 : '(DOMICÍLIO)',
+    APP_COMPONENT_HEADER_HEART_2: 'OUT',
+    APP_COMPONENT_HEADER_HEART_EXPLAIN_2 : '(SALÃO)',
+    APP_COMPONENT_HEADER_HEART_3: 'IN/OUT',
+    APP_COMPONENT_HEADER_HEART_4: 'OCUPADO',
+    APP_COMPONENT_HEADER_FILTER: 'FILTRAR',
+
     greeting : 'Olá',
     greeting_one: 'Bem vindo ao React Native!',
     greeting_two: 'Para começar, edit App.js'
